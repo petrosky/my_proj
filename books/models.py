@@ -15,7 +15,7 @@ class Book(models.Model):
 
 class Genre(models.Model):
     name = models.CharField(max_length=50)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    books = models.ManyToManyField(Book)
 
     def __str__(self):
         return self.name
